@@ -145,7 +145,7 @@ const Home = () => {
   }
 
   const addNote = () => {
-    if(noteToAdd.length <=0){
+    if(noteToAdd.length <=3){
       setAddNoteError('A note should be at least 3 characters long')
       return
     }
