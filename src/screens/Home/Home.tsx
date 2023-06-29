@@ -145,7 +145,8 @@ const Home = () => {
   }
 
   const addNote = () => {
-    if(noteToAdd.length <=3){
+    setAddNoteError('')
+    if(noteToAdd.length < 3){
       setAddNoteError('A note should be at least 3 characters long')
       return
     }
@@ -164,6 +165,7 @@ const Home = () => {
       let newNotes = [...notes, newNote];
       saveToStorage('notes', newNotes) //update storage
       setNotes(newNotes)
+      setNoteToAdd('')
     } catch (error) {
       
     }
